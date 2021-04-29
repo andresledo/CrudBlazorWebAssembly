@@ -1,0 +1,40 @@
+﻿@page "/film/create"
+@using FilmCrud.Shared.Models
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<h3>Añadir película</h3>
+
+<EditForm Model="@_film" OnValidSubmit="Post">
+    <div class="form-group">
+        <label>Título: </label>
+        <InputText @bind-Value="_film.Title" />
+    </div>
+
+    <div class="form-group">
+        <label>Descripcion</label>
+        <InputTextArea @bind-Value="_film.Description"/>
+    </div>
+
+    <div class="form-group">
+        <label>Summary: </label>
+        <InputNumber @bind-Value="_film.Duration"/>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-success" value="Agregar pelicula" />
+    </div>
+</EditForm>
+
+@code {
+
+    private Film _film = new();
+
+    private async Task Post()
+    {
+        await Http.PostAsJsonAsync<Film>("/api/Films/", _film);
+        Navigation.NavigateTo("/films");
+    }
+
+
+}

@@ -1,0 +1,15 @@
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\bin\Debug\net5.0\FilmCrud.Shared.deps.json
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\bin\Debug\net5.0\FilmCrud.Shared.runtimeconfig.json
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\bin\Debug\net5.0\FilmCrud.Shared.runtimeconfig.dev.json
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\bin\Debug\net5.0\FilmCrud.Shared.dll
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\bin\Debug\net5.0\ref\FilmCrud.Shared.dll
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\bin\Debug\net5.0\FilmCrud.Shared.pdb
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\obj\Debug\net5.0\FilmCrud.Shared.csprojAssemblyReference.cache
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\obj\Debug\net5.0\FilmCrud.Shared.GeneratedMSBuildEditorConfig.editorconfig
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\obj\Debug\net5.0\FilmCrud.Shared.AssemblyInfoInputs.cache
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\obj\Debug\net5.0\FilmCrud.Shared.AssemblyInfo.cs
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\obj\Debug\net5.0\FilmCrud.Shared.csproj.CoreCompileInputs.cache
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\obj\Debug\net5.0\FilmCrud.Shared.dll
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\obj\Debug\net5.0\ref\FilmCrud.Shared.dll
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\obj\Debug\net5.0\FilmCrud.Shared.pdb
+G:\Ejemplos\FilmCrud\FilmCrud\Shared\obj\Debug\net5.0\FilmCrud.Shared.genruntimeconfig.cache

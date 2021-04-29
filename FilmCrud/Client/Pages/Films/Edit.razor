@@ -1,0 +1,55 @@
+﻿@page "/film/edit/{id:int}"
+@using FilmCrud.Shared.Models
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<h3>Añadir película</h3>
+
+@if (_film == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <EditForm Model="@_film" OnValidSubmit="Put">
+        <div class="form-group">
+            <label>Título: </label>
+            <InputText @bind-Value="_film.Title" />
+        </div>
+
+        <div class="form-group">
+            <label>Descripcion</label>
+            <InputTextArea @bind-Value="_film.Description" />
+        </div>
+
+        <div class="form-group">
+            <label>Summary: </label>
+            <InputNumber @bind-Value="_film.Duration" />
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Editar pelicula" />
+        </div>
+    </EditForm>
+}
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private Film _film = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _film = await Http.GetFromJsonAsync<Film>($"/api/Films/{Id}");
+    }
+
+
+    private async Task Put()
+    {
+        await Http.PutAsJsonAsync<Film>($"/api/Films/{_film.Id}", _film);
+        Navigation.NavigateTo("/Films");
+    }
+
+}

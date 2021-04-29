@@ -1,0 +1,78 @@
+﻿@page "/films"
+@using FilmCrud.Shared.Models
+@inject HttpClient Http
+@inject NavigationManager Navigation
+
+<h3>Películas</h3>
+
+@if (_films == null)
+{
+    <p><em>Cargando...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Duration</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var film in _films)
+            {
+                <tr>
+                    <td>@film.Id.ToString()</td>
+                    <td>@film.Title</td>
+                    <td>@film.Description</td>
+                    <td>@film.Duration</td>
+
+                    <td>
+                        <button class="btn btn-info"
+                                @onclick="(() => Edit(film.Id))">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger"
+                                @onclick="(() => Delete(film.Id))">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div>
+        <button class="btn btn-success" @onclick="Create">Añadir película</button>
+    </div>
+}
+
+@code {
+    
+
+    private List<Film> _films;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _films = await Http.GetFromJsonAsync<List<Film>>("/api/Films");
+    }
+
+    private async Task Delete(int id)
+    {
+        await Http.DeleteAsync($"/api/Films/{id}");
+        _films = await Http.GetFromJsonAsync<List<Film>>("/api/Films");
+        StateHasChanged();
+    }
+
+    private void Edit(int id)
+    {
+        Navigation.NavigateTo($"/film/edit/{id}");
+    }
+
+    private void Create()
+    {
+        Navigation.NavigateTo("/film/create");
+    }
+}
